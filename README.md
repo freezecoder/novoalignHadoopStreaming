@@ -35,9 +35,8 @@ Note that the novohadoop.jar is required. This jar is an archive of the executab
 
 Configuration
 -------------
-Set the $HADOOP_STREAMING variable to it's location on your hadoop cluster
-
-
+Set the $HADOOP_STREAMING variable in the shell script to it's location on your hadoop cluster.
+Upload the jar in this repo or your own to HDFS and set it's location in the script
 
 
 Building your  own jars
