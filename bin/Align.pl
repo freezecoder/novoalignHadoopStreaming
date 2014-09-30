@@ -35,9 +35,9 @@ my $counter = strftime( q/%Y%m%dT%H%M%S/, localtime());
 print STDERR "Indexing done, Now Aligning to reference $index\n";
 #if remove unmapped reads is true
 if  ($removeun) {
-	open(F,"| ./$aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -S -F 4 -h -") or die "$!";
+	open(F,"| $aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -S -F 4 -h -") or die "$!";
 }else {
-	open(F,"| ./$aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -S -h -") or die "$!";
+	open(F,"| $aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -S -h -") or die "$!";
 }
 while (<>) {
 	s/^\@//; #strip off leading @ character that messses up file format
@@ -49,8 +49,3 @@ print STDERR "$0:\t$c records processed\n";
 exit 0;
 
 
-
-#unused pipes
-#open(F,"| ./$aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom  ") or die "$!";
-#open(F,"| ./$aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -uS - | ./samtools sort -o - - | ./samtools view - ") or die "$!";
-#open(F,"| ./$aligner  $opts -d $index -F TSV -f - -oSAM -k -rRandom | ./samtools view -uS -  | ./novosort - -t . -m 3g   | ./samtools view -h - ") or die "$!";
