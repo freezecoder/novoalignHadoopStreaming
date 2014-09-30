@@ -31,9 +31,9 @@ Novoalign.lic is the novoalign license file
 
 Note that the novohadoop.jar is required. This jar is an archive of the executables of 
 
-1) novoalign
-2) samtools
-3) align.cmd (the mapper for mapreduce)
+1. novoalign
+2. samtools
+3. align.cmd (the mapper for mapreduce)
 
 
 Building your  own jars
