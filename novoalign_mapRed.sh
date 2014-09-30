@@ -19,7 +19,7 @@ PACKAGE="novohadoop.jar"
 jobname="NovoalignPairedEnd"
 
 if [ $# -lt 3 ];then
-	echo "$0 hdfs-inputreads.tsv hdfs-ref.novoindex hdfs-outdir"
+	echo "$0 hdfs-inputreads.tsv hdfs-ref.novoindex hdfs-outdir novoalign.lic "
 	echo "Note: Input PE reads are TSV : readname seq1 qual1 seq2 qual2, SE reads are readname read1 qual1"
 	exit
 fi
@@ -27,6 +27,7 @@ fi
 input=$1
 reference=$2
 outdir=$3
+lic=$4
 
 #Hadoop Mapreduce memory
 #This is set for Human-genome, set lower for smaller ref. genomes
@@ -61,7 +62,7 @@ echo hadoop jar $HADOOP_STREAMING  \
 	-D mapreduce.map.memory.mb=$MEM \
 	-D mapreduce.map.java.opts=-Xmx$HEAP \
 	-input $input  \
-	-file novoalign.lic  \	
+	-file $lic  \	
 	$cachefiles \
 	$arch  \
 	-output  $rawsam  \
