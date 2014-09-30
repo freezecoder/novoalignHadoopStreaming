@@ -11,8 +11,7 @@ Requirements
 -------------------------
 
 1) A working hadoop cluster. For human-genome sized alignments you will need hadoop streaming to run large memory jobs, typically above 6Gb.
-
-2) Download novoalign and request free  trial license from www.novocraft.com
+2) Download novoalign and request free  trial license from www.novocraft.com. See the [release notes] (http://www.novocraft.com/wiki/tiki-view_forum_thread.php?comments_parentId=843)
 
 Note well: requires V3.03.00 or higher
 
