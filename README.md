@@ -18,15 +18,12 @@ Note well: requires V3.03.00 or higher
 Usage
 ---------------------------
 
-All locations are in HDFS
-
-
 
 ```sh
-novoalign_mapRed.sh reads.tsv database.nix alignment_out novoalign.lic
+./novoalign_mapRed.sh reads.tsv database.nix alignment_out novoalign.lic
 ```
 
-
+All locations are in HDFS. Therefore novoindex your genome before loading into HDFS.
 Novoalign.lic is the novoalign license file
 
 Note that the novohadoop.jar is required. This jar is an archive of the executables of 
@@ -45,3 +42,10 @@ An example of buildin your own jar is given below:
 ```sh
 jar -cf novohadoop.jar align.cmd novoalign samtools Align.pl  novosort novoindex vcfutils.pl
 ```
+
+
+Creating input reads in TSV format
+----------------------------------
+Jnomics may be used for this. Also a simple perl program in scripts/ is included.
+
+1. Copy all TSV files to HDFS.
