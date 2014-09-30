@@ -17,7 +17,12 @@ Usage
 
 All locations are in HDFS
 
-$0 reads.tsv database.nix outdir novoalign.lic
+
+
+```sh
+novoalign_mapRed.sh reads.tsv database.nix alignment_out novoalign.lic
+```
+
 
 Novoalign.lic is the novoalign license file
 
