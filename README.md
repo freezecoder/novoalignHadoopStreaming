@@ -33,6 +33,13 @@ Note that the novohadoop.jar is required. This jar is an archive of the executab
 3. align.cmd (the mapper for mapreduce)
 
 
+Configuration
+-------------
+Set the $HADOOP_STREAMING variable to it's location on your hadoop cluster
+
+
+
+
 Building your  own jars
 -----------------------
 
