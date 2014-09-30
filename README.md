@@ -3,7 +3,9 @@ novoalignHadoopStreaming
 
 Synopsis
 ----------
-Run Novoalign using Hadoop Streaming
+Run Novoalign using Hadoop Streaming. The hadoop software stack is widely used for big data analysis. In bioinformatics and next-generation sequencing (NGS) there is however the potential to use existing software to distribute 
+using the hadoop streaming mechanism.
+A collection of SAM alignment files are produced by this script and these can be further processed by HadoopBAM to make BAM files for further analysis.
 
 Requirements
 -------------------------
