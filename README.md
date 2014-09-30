@@ -85,3 +85,17 @@ novoindex genome.nix  genome.fasta
 ```sh
 hadoop fs -copyFromLocal genome.nix index/
 ```
+
+Platforms tested
+-----------------
+tested on the following:
+
+1. Amazon Hadoop AWS 1.3
+2. Cloudera CDH4/5
+
+
+Help information
+------------------
+
+contact us at  www.novocraft.com to obtain a free trial license  or to report issues in our support forum
+
