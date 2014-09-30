@@ -77,7 +77,7 @@ Creating a genome index for Novoalign
 
 ```sh
 novoindex genome.nix  genome.fasta
-``
+```
 
 
 2. Copy the genome index to HDFS. This is a binary file and cannot be split.
