@@ -55,4 +55,33 @@ Creating input reads in TSV format
 ----------------------------------
 Jnomics may be used for this. Also a simple perl program in scripts/ is included.
 
-1. Copy all TSV files to HDFS.
+
+1. Convert FASTQ reads
+
+```sh
+perl scripts/mapreduce_fq2table.pl s_1_1_sequence.txt.gz s_1_2_sequence.txt.gz > s_1.reads.tsv
+```
+
+2. Copy all TSV files to HDFS.
+
+```sh
+hadoop fs -mkdir reads
+hadoop fs -copyFromLocal  s_1.reads.tsv reads/
+```
+
+
+Creating a genome index for Novoalign
+-------------------------------------
+
+1. On your local filesystem run the following on a genome fasta file:
+
+```sh
+novoindex genome.nix  genome.fasta
+``
+
+
+2. Copy the genome index to HDFS. This is a binary file and cannot be split.
+
+```sh
+hadoop fs -copyFromLocal genome.nix index/
+```
