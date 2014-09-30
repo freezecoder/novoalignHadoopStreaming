@@ -1,0 +1,20 @@
+[
+{
+  "Name": "E. coli 5k reads Novoalign", 
+  "ActionOnFailure": "CANCEL_AND_WAIT", 
+  "HadoopJarStep": { 
+    "Jar": "/home/hadoop/contrib/streaming/hadoop-streaming.jar",
+    "Args": [ 
+      "-D", "mapred.reduce.tasks=0",
+      "-D", "mapred.map.tasks=6",
+      "-D", "mapred.job.map.memory.mb=100"	,
+      "-input",       "s3n://yourPath/testdata/treads.tsv",
+      "-output",      "s3n://yourpath/NovoAlign0000000111",
+      "-mapper",    "perl novocloud/novocraft/NovoCloudAlign.pl -database db.nix ",
+      "-cacheFile", "s3n://novoindexes/ecoli/ecoli.nix#db.nix",
+     "-cacheFile", "s3n://pathToyour/novocloud-package.v1.jar#novocloud",
+     "-cacheFile", "s3n://pathToyour/novocloud/novocraft/novoalign.lic#novoalign.lic"
+    ] 
+  }
+}
+]
