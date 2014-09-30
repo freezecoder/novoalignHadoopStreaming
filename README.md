@@ -7,7 +7,10 @@ Run Novoalign using Hadoop Streaming
 
 Requirements
 -------------------------
-Download novoalign and request free  trial license from www.novocraft.com
+
+1) A working hadoop cluster. For human-genome sized alignments you will need hadoop streaming to run large memory jobs, typically above 6Gb.
+
+2) Download novoalign and request free  trial license from www.novocraft.com
 
 Note well: requires V3.03.00 or higher
 
